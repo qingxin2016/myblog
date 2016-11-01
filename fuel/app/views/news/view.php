@@ -36,7 +36,7 @@ use Fuel\Core\Session;
 
 	
 	<hr>
-	<?php echo Form::open('/bbs/add');?>
+	<?php echo Form::open(array('action' => '/bbs/add', 'enctype' => 'multipart/form-data'));?>
   <div class="form-group">
 				<?php echo Form::label('Email address');?>
 				<?php echo Form::input('email','',array('class'=>'form-control','placeholder'=>'Email','type'=>'email'));?>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 2016 年 11 朁E01 日 08:55
+-- Generation Time: 2016 年 11 朁E01 日 11:01
 -- サーバのバージョン： 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -54,6 +54,19 @@ INSERT INTO `comments` (`id`, `newsid`, `email`, `comment`, `file`, `created_at`
 -- --------------------------------------------------------
 
 --
+-- テーブルの構造 `files`
+--
+
+CREATE TABLE `files` (
+  `id` int(11) NOT NULL,
+  `commentid` int(11) NOT NULL,
+  `path` varchar(255) NOT NULL,
+  `created_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- テーブルの構造 `news`
 --
 
@@ -88,6 +101,12 @@ ALTER TABLE `comments`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `files`
+--
+ALTER TABLE `files`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `news`
 --
 ALTER TABLE `news`
@@ -102,6 +121,11 @@ ALTER TABLE `news`
 --
 ALTER TABLE `comments`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+--
+-- AUTO_INCREMENT for table `files`
+--
+ALTER TABLE `files`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `news`
 --
