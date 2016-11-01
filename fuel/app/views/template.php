@@ -32,7 +32,7 @@ use Fuel\Core\Asset;
           <ul class="nav nav-justified">
             <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="/news/add">Add</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="/bbs">BBS</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Downloads</a></li>
             <li class="nav-item"><a class="nav-link" href="#">About</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>

@@ -18,6 +18,8 @@ use Fuel\Core\Form;
 		<div class="action">
 			<?php echo Form::submit('send')?>
 		</div>
+		
+		  
 		<?php echo Form::close();?>
 	</div>
 </div>
