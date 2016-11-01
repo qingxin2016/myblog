@@ -12,7 +12,7 @@ use Fuel\Core\Form;
 		</div>
 		<div class="form-group">
 			<?php echo Form::label('Body', 'body');?>
-			<?php echo Form::textarea('body', Input::post('body',isset($items['body'])?$items['body']:''), array('class' => 'form-control'));?>
+			<?php echo Form::textarea('body', Input::post('body',isset($items['body'])?$items['body']:''), array('class' => 'form-control','rows'=>'10'));?>
 		</div>
 		<input type="hidden" name="post_id" value="<?php echo $items['id']?>">
 		<div class="action">

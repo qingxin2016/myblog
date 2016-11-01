@@ -4,6 +4,7 @@ use Fuel\Core\Controller_Template;
 use Fuel\Core\Input;
 use Fuel\Core\Session;
 use Fuel\Core\Response;
+use Fuel\Core\Model;
 
 class Controller_News extends Controller_Template
 {
@@ -24,10 +25,14 @@ class Controller_News extends Controller_Template
 						'id'=>$id
 				)
 		));
+		$comment =Model_Comments::find('all',array(
+				'where' => array(
+						'newsid'=>$id
+				)
+		));
 		
 		
-		
-		$data = array('items'=>$news);
+		$data = array('items'=>$news,'comment'=>$comment);
         $this->template->title = 'view';
         $this->template->content = View::forge('news/view', $data);
 	}
