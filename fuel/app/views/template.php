@@ -30,8 +30,8 @@ use Fuel\Core\Asset;
         <h3 class="text-muted"><?php echo $title;?></h3>
         <nav>
           <ul class="nav nav-justified">
-            <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="/news/add">Add</a></li>
+            <li class="nav-item"><a class="nav-link<?php echo (strstr(Uri::current(), '/news')&&$_SERVER['REQUEST_URI']!='/news/add'? ' active' : '');?>" href="/news">Home</a></li>
+            <li class="nav-item"><a class="nav-link<?php echo (strstr(Uri::current(), '/news/add')? ' active' : '');?>" href="/news/add">Add</a></li>
             <li class="nav-item"><a class="nav-link" href="/bbs">BBS</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Downloads</a></li>
             <li class="nav-item"><a class="nav-link" href="#">About</a></li>

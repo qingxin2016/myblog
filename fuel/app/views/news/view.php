@@ -26,15 +26,22 @@ use Fuel\Core\Session;
 	<br>
 	<br>
 	<ul>
+	<?php if ($comments):?>
+		<?php foreach ($comments as $comment):?>
 	
-	<?php foreach ($comment as $comments):?>
-		<li class="text-muted"><span class="glyphicon glyphicon-pencil"></span>
-		
-		<?php echo $comments->comment;?>
-		<br><img src="" alt="..." class="img-thumbnail">
-		</li>
-		<br>
-	<?php endforeach;?>
+			<li class="text-muted"><span class="glyphicon glyphicon-pencil"></span>
+			<?php echo $comment['comment'];?>
+			<br>
+			<?php if($comment['file']):?>
+			<img src="/files/<?php echo $comment['file'];?>" alt="..." class="img-thumbnail " style="width: 140px;height:140px;">
+			<br><br>
+			<?php endif;?>
+			
+			<span class="glyphicon glyphicon-calendar"></span>&nbsp;&nbsp;<span><?php echo $comment['created_at'];?></span>
+			</li>
+			<br>
+		<?php endforeach;?>
+	<?php endif;?>
 	</ul>
 
 

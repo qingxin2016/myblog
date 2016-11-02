@@ -26,17 +26,19 @@ class Controller_News extends Controller_Template
 				)
 		));
 		
-		$sql="SELECT * FROM `comments` LEFT JOIN `files` ON comments.id = files.commentid";
+		$sql="SELECT * FROM `comments` LEFT JOIN `files` ON (files.commentid=comments.id) WHERE comments.newsid=".$id;
 		
-		$comment =Model_Comments::find('all',array(
-				'where' => array(
-						'newsid'=>$id
-				)
-		));
+		$comment=DB::query($sql) -> execute()->as_array();
+		
+// 		$comment =Model_Comments::find('all',array(
+// 				'where' => array(
+// 						'newsid'=>$id
+// 				)
+// 		));
 		
 		
 		
-		$data = array('items'=>$news,'comment'=>$comment);
+		$data = array('items'=>$news,'comments'=>$comment);
         $this->template->title = 'view';
         $this->template->content = View::forge('news/view', $data);
 	}
