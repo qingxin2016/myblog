@@ -28,7 +28,11 @@ use Fuel\Core\Session;
 	<ul>
 	
 	<?php foreach ($comment as $comments):?>
-		<li class="text-muted"><span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;<?php echo $comments->comment;?></li>
+		<li class="text-muted"><span class="glyphicon glyphicon-pencil"></span>
+		
+		<?php echo $comments->comment;?>
+		<br><img src="" alt="..." class="img-thumbnail">
+		</li>
 		<br>
 	<?php endforeach;?>
 	</ul>
