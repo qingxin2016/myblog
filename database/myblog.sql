@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 2016 年 11 朁E01 日 11:01
+-- Generation Time: 2016 年 11 朁E02 日 08:29
 -- サーバのバージョン： 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -40,16 +40,8 @@ CREATE TABLE `comments` (
 --
 
 INSERT INTO `comments` (`id`, `newsid`, `email`, `comment`, `file`, `created_at`) VALUES
-(1, 1, 'dddd@qq.com', '?phpmyadmin????????????????????????????????????????????????????', '', '2016-11-01 00:00:00'),
-(2, 1, '826955835@qq.com', 'hhhhhhhhhhhhhhhhhh', '1611mailmagazine03.jpg', '2016-11-01 08:09:55'),
-(3, 8, '', '', '', '2016-11-01 08:14:56'),
-(4, 1, 'qingxin2016@gmail.com', 'hhhhhhhhg', '1611mailmagazine01.jpg', '2016-11-01 08:29:51'),
-(5, 1, 'qingxin2016@gmail.com', 'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh', '1611mailmagazine07.jpg', '2016-11-01 08:30:56'),
-(6, 1, 'sho@mieux.co.jp', '1212121', '1611mailmagazine01.jpg', '2016-11-01 08:32:03'),
-(7, 1, 'qingxin2016@gmail.com', 'ggggggggggggggggggggggggggggggg', '1611mailmagazine01.jpg', '2016-11-01 08:32:37'),
-(8, 6, 'qingxin2016@gmail.com', '123456789', '', '2016-11-01 08:33:42'),
-(9, 8, 'qingxin2016@gmail.com', 'good!', '', '2016-11-01 08:34:54'),
-(10, 1, '826955835@qq.com', '"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"', '', '2016-11-01 08:35:47');
+(19, 3, '321@qqcom', 'dsadada', '38844a1e985466651f07286afea469c0.jpg', '2016-11-02 07:48:43'),
+(20, 1, 'qingxin2016@gmail.com', 'dsadadddddddddddddddddddddddd', '861bcc7b2e87d2d535407646cdddf8eb.jpg', '2016-11-02 08:27:12');
 
 -- --------------------------------------------------------
 
@@ -63,6 +55,17 @@ CREATE TABLE `files` (
   `path` varchar(255) NOT NULL,
   `created_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- テーブルのデータのダンプ `files`
+--
+
+INSERT INTO `files` (`id`, `commentid`, `path`, `created_at`) VALUES
+(9, 16, 'C:\\xampp\\htdocs\\myblog\\public\\files\\', '2016-11-02 07:41:50'),
+(10, 17, 'C:\\xampp\\htdocs\\myblog\\public\\files\\', '2016-11-02 07:42:15'),
+(11, 18, 'C:\\xampp\\htdocs\\myblog\\public\\files\\', '2016-11-02 07:46:52'),
+(12, 19, 'C:\\xampp\\htdocs\\myblog\\public\\files\\', '2016-11-02 07:48:43'),
+(13, 20, 'C:\\xampp\\htdocs\\myblog\\public\\files\\', '2016-11-02 08:27:12');
 
 -- --------------------------------------------------------
 
@@ -88,7 +91,8 @@ INSERT INTO `news` (`id`, `title`, `body`, `created_at`) VALUES
 (5, 'Where can I get some?', 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don''t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn''t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', '2016-11-01 07:11:10'),
 (6, 'Where does it come from?', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.\r\n\r\nThe standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.', '2016-11-01 07:11:33'),
 (7, '1914 translation by H. Rackham', '"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"', '2016-11-01 07:12:36'),
-(8, 'Section 1.10.33 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC', '"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."', '2016-11-01 07:12:59');
+(8, 'Section 1.10.33 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC', '"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."', '2016-11-01 07:12:59'),
+(9, '???????????????', '??????', '2016-11-02 02:30:56');
 
 --
 -- Indexes for dumped tables
@@ -120,17 +124,17 @@ ALTER TABLE `news`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `files`
 --
 ALTER TABLE `files`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
