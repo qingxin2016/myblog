@@ -11,9 +11,34 @@ class Controller_News extends Controller_Template
 	
 	public function action_index()
 	{
-		$news = Model_news::find('all');
+		//$news = Model_news::find('all');
 		
-		$data = array('news'=>$news);
+		//ページネーションで設定するため、表示させるデータの全件数をcount関数で取得します。
+		$total = count(Model_news::find('all'));
+		
+		//ページネーションの設定用変数を作成します。
+		$config = array(
+				'pagination_url' => 'news/index',
+				'uri_segment' => 3,
+				'per_page' => 2,
+				'total_items' => $total
+		);
+		// 'mypagination' という名前の pagination インスタンスを作る
+		$pagination = Pagination::forge('mypagination', $config);
+		
+		//モデルからデータを取得、
+		$data['news'] = Model_news::find('all',array(
+				'order_by' => array(
+						'created_at' => 'desc'
+				),
+				'limit' => $pagination->per_page,
+				'offset' => $pagination->offset
+			)
+		);
+		
+		//return View::forge('news/index',$data);
+		
+		//$data = array('news'=>$news);
         $this->template->title = 'News';
         $this->template->content = View::forge('news/index', $data);
 	}
