@@ -51,17 +51,12 @@ class Controller_News extends Controller_Template
 				)
 		));
 		$str="comments.id,comments.newsid as cnewsid,comments.comment as ccomment,comments.file as filename,comments.created_at as created_time,files.path as file_path";
-		$sql="SELECT ".$str." FROM `comments` LEFT JOIN `files` ON (files.commentid=comments.id) WHERE comments.newsid=".$id;
+		$sql="SELECT ".$str." FROM `comments` LEFT JOIN `files` ON (files.commentid=comments.id) WHERE comments.newsid=".$id." ORDER BY comments.created_at DESC";
 		
 		$comment=DB::query($sql) -> execute()->as_array();
 		
-// 		$comment =Model_Comments::find('all',array(
-// 				'where' => array(
-// 						'newsid'=>$id
-// 				)
-// 		));
-		
-		
+		//important.对于引用的页面设定全局，不然会出错误信息
+		$this->template->set_global('comments', $comment, false);
 		
 		$data = array('items'=>$news,'comments'=>$comment);
         $this->template->title = 'view';

@@ -48,7 +48,10 @@ class Controller_Bbs extends Controller_Template {
 				
 			// 如果有任何有效檔案
 			if (Upload::is_valid ()) {
-				
+				// 根據配置儲存他們
+				if (Upload::is_valid ()) {
+					Upload::save ();
+				}
 			
 			
 				//if you want to save to tha database lets grab the file name
