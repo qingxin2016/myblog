@@ -50,8 +50,8 @@ class Controller_News extends Controller_Template
 						'id'=>$id
 				)
 		));
-		
-		$sql="SELECT * FROM `comments` LEFT JOIN `files` ON (files.commentid=comments.id) WHERE comments.newsid=".$id;
+		$str="comments.id,comments.newsid as cnewsid,comments.comment as ccomment,comments.file as filename,comments.created_at as created_time,files.path as file_path";
+		$sql="SELECT ".$str." FROM `comments` LEFT JOIN `files` ON (files.commentid=comments.id) WHERE comments.newsid=".$id;
 		
 		$comment=DB::query($sql) -> execute()->as_array();
 		
