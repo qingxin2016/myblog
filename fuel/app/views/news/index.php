@@ -21,4 +21,9 @@ use Fuel\Core\Session;
 		</p>
 	</div>
 	<?php endforeach;?>
+	
+	<!--Paginationを表示する-->
+	<?php echo Pagination::instance('mypagination')->render(); ?>
+	
+	
 </div>

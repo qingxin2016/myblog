@@ -41,9 +41,7 @@ class Controller_Bbs extends Controller_Template {
 							'jpeg',
 							'gif',
 							'png'
-					),
-					'auto_rename' => false,
-					'overwrite'   => true
+					)
 			);
 			// 處理 $_FILES 中上傳的檔案
 			Upload::process ( $config );
