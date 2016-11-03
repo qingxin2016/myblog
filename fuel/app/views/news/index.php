@@ -16,7 +16,7 @@ use Fuel\Core\Session;
 		<p>Created:<?php echo $items['created_at']?></p>
 		<p><?php echo Str::truncate($items['body'], 200);?></p>
 		<p>
-			<a class="btn btn-primary" href="/news/view/<?php echo $items['id'];?>" role="button">View details
+			<a class="btn btn-primary" href="/news/view/<?php echo $items['id'];?>.html" role="button">View details
 				&raquo;</a>
 		</p>
 	</div>
