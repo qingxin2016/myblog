@@ -3,6 +3,7 @@
 class Model_upload extends orm\Model{
 	protected static $_properties = array(
 			'id',
+			'pid',
 			'title',
 			'price',
 			'number',
