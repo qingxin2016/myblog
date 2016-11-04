@@ -33,13 +33,21 @@ use Fuel\Core\Asset;
             <li class="nav-item"><a class="nav-link<?php echo (strstr(Uri::current(), '/news')&&$_SERVER['REQUEST_URI']!='/news/add'? ' active' : '');?>" href="/news">Home</a></li>
             <li class="nav-item"><a class="nav-link<?php echo (strstr(Uri::current(), '/news/add')? ' active' : '');?>" href="/news/add">Add</a></li>
             <li class="nav-item"><a class="nav-link" href="/bbs">BBS</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Downloads</a></li>
+            <li class="nav-item"><a class="nav-link<?php echo (strstr(Uri::current(), '/upload')? ' active' : '');?>" href="/upload">Upload</a></li>
             <li class="nav-item"><a class="nav-link" href="#">About</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
           </ul>
         </nav>
       </div>
-
+      <br>
+	  <?php if (Session::get_flash('success')):?>
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="alert alert-success"><?php echo Session::get_flash('success');?></div>
+			</div>
+		</div>
+	  <?php endif;?>
+	  
       <?php echo $content;?>
 
       <!-- Site footer -->
