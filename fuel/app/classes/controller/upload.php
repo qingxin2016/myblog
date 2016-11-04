@@ -55,9 +55,10 @@ class Controller_Upload extends Controller_Template {
 						
 						//save the data to the database
 						$update=new Model_upload();
-						$update->title=$file[0];
-						$update->price=$file[1];
-						$update->number=$file[2];
+						$update->pid=$file[0];
+						$update->title=$file[1];
+						$update->price=$file[2];
+						$update->number=$file[3];
 						$update->created_at=date('Y-m-d H:i:s');
 						
 						$update->save();
@@ -65,6 +66,7 @@ class Controller_Upload extends Controller_Template {
 						Session::set_flash('success','csv has been successfully loaded!');		
 					
 				}
+				
 				Response::redirect('upload/index');
 			}
 			
