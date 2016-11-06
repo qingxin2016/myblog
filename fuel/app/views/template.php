@@ -47,7 +47,13 @@ use Fuel\Core\Asset;
 			</div>
 		</div>
 	  <?php endif;?>
-	  
+	  <?php if (Session::get_flash('erro')):?>
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="alert alert-danger"><?php echo Session::get_flash('erro');?></div>
+			</div>
+		</div>
+	  <?php endif;?>
       <?php echo $content;?>
 
       <!-- Site footer -->
