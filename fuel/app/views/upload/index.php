@@ -19,6 +19,7 @@ use Fuel\Core\Session;
 		  <thead>
 		    <tr>
 		      <th>ID</th>
+		      <th>PID</th>
 		      <th>Title</th>
 		      <th>Price</th>
 		      <th>Num</th>
@@ -28,6 +29,7 @@ use Fuel\Core\Session;
 		  <?php foreach ($files as $items):?>
 		    <tr>
 		      <th scope="row"><?php echo $items['id']?></th>
+		      <td><?php echo $items['pid']?></td>
 		      <td><?php echo $items['title']?></td>
 		      <td><?php echo $items['price']?></td>
 		      <td><?php echo $items['number']?></td>
