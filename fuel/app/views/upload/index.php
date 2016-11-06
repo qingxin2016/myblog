@@ -35,7 +35,10 @@ use Fuel\Core\Session;
 		      <td><?php echo $items['number']?></td>
 		    </tr>
 		    <?php endforeach;?>
+		    
 		  </tbody>
 		</table>
+		<!--Paginationを表示する-->
+		<?php echo Pagination::instance('mypagination')->render();?>
 	</div>
 </div>

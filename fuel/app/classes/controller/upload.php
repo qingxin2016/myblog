@@ -4,9 +4,24 @@ use Fuel\Core\Input;
 use Fuel\Core\Response;
 class Controller_Upload extends Controller_Template {
 	public function action_index() {
+		$config = array(
+				'pagination_url' => '/upload/index/',
+				'total_items'    => Model_upload::count(),
+				'per_page'       => 30,
+				'uri_segment'    => 3,
+				// or if you prefer pagination by query string
+				//'uri_segment'    => 'page',
+		);
+		$pagination = Pagination::forge('mypagination', $config);
 		
-		// return Response::forge(View::forge('upload/index'));
-		$file = Model_upload::find ( 'all' );
+		$file = Model_upload::query()
+                            ->rows_offset($pagination->offset)
+                            ->rows_limit($pagination->per_page)
+                            ->get();
+
+		// we pass the object, it will be rendered when echo'd in the view
+		$data['pagination'] = $pagination;
+		
 		
 		$data = array (
 				'files' => $file 
