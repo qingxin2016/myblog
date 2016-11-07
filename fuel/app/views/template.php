@@ -34,7 +34,7 @@ use Fuel\Core\Asset;
             <li class="nav-item"><a class="nav-link<?php echo (strstr(Uri::current(), '/news')&&$_SERVER['REQUEST_URI']!='/news/add'? ' active' : '');?>" href="/news">Home</a></li>
             <li class="nav-item"><a class="nav-link<?php echo (strstr(Uri::current(), '/news/add')? ' active' : '');?>" href="/news/add">Add</a></li>
             <li class="nav-item"><a class="nav-link<?php echo (strstr(Uri::current(), '/upload')? ' active' : '');?>" href="/upload">Upload</a></li>
-            <li class="nav-item"><a class="nav-link" href="/bbs">BBS</a></li>
+            <li class="nav-item"><a class="nav-link<?php echo (strstr(Uri::current(), '/user')? ' active' : '');?>" href="/user">User</a></li>
             
             <li class="nav-item"><a class="nav-link" href="#">About</a></li>
             <li class="nav-item"><a class="nav-link" href="/logout">Login Out</a></li>
