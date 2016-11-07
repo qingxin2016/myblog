@@ -28,6 +28,7 @@ use Fuel\Core\Asset;
            Multiple lines will require custom code not provided by Bootstrap. -->
       <div class="masthead">
         <h3 class="text-muted"><?php echo $title;?></h3>
+        
         <nav>
           <ul class="nav nav-justified">
             <li class="nav-item"><a class="nav-link<?php echo (strstr(Uri::current(), '/news')&&$_SERVER['REQUEST_URI']!='/news/add'? ' active' : '');?>" href="/news">Home</a></li>
@@ -36,10 +37,12 @@ use Fuel\Core\Asset;
             <li class="nav-item"><a class="nav-link" href="/bbs">BBS</a></li>
             
             <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="/logout">Login Out</a></li>
           </ul>
         </nav>
       </div>
+     
+      
       <br>
 	  <?php if (Session::get_flash('success')):?>
 		<div class="row">

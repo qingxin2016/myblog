@@ -3,6 +3,15 @@ use Fuel\Core\Controller_Template;
 use Fuel\Core\Input;
 use Fuel\Core\Response;
 class Controller_Upload extends Controller_Template {
+	public function before()
+	{
+		parent::before();// この行がないと、テンプレートが動作しません!
+		if (!Auth::check())
+		{
+			Response::redirect('/login');
+		}
+	}
+	
 	public function action_index() {
 		$config = array(
 				'pagination_url' => '/upload/index/',
