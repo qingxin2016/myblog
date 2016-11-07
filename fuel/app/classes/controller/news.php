@@ -8,6 +8,14 @@ use Fuel\Core\Model;
 
 class Controller_News extends Controller_Template
 {
+	public function before()
+	{
+		parent::before();// この行がないと、テンプレートが動作しません!
+		if (!Auth::check())
+		{
+			Response::redirect('/login');
+		}
+	}
 	
 	public function action_index()
 	{
