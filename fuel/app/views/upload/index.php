@@ -15,7 +15,7 @@ use Fuel\Core\Session;
 <hr>
 <div class="row">
 	<div class="col-lg-12">
-		<table class="table table-striped">
+		<table class="table table-striped  table-hover">
 		  <thead>
 		    <tr>
 		      <th>ID</th>
