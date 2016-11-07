@@ -15,6 +15,12 @@ class Controller_User extends Controller_Template
 		$this->template->title = 'User';
 		$this->template->content = View::forge('user/index',$data);
 	}
+	public function action_create()
+	{
+		
+		$this->template->title = 'User';
+		$this->template->content = View::forge('user/create');
+	}
 
 	
 }
