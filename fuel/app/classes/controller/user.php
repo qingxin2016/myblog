@@ -3,6 +3,7 @@ use Fuel\Core\Controller_Template;
 use Fuel\Core\Input;
 use Fuel\Core\Session;
 use Fuel\Core\Response;
+
 class Controller_User extends Controller_Template {
 	public function action_index() {
 		$data ['user'] = Model_user::find ( 'all' );
@@ -15,11 +16,44 @@ class Controller_User extends Controller_Template {
 	}
 	public function action_create() {
 		if (Input::post ( 'send' )) {
-			// 新しいユーザーを作成
-			Auth::create_user ( Input::post ( 'username' ), Input::post ( 'password' ), Input::post ( 'email' ), Input::post ( 'group' ) );
+				try {
+					// 新しいユーザーを作成
+					$created = Auth::create_user ( Input::post ( 'username' ), Input::post ( 'password' ), Input::post ( 'email' ), Input::post ( 'group' ) );
+					// if a user was created succesfully
+					if ($created){
+						Session::set_flash('success','New user has been created');
+					
+						Response::redirect('user/index');
+					}else {
+						Session::set_flash('erro','Failed.');
+					
+						Response::redirect('user/index');
+					}
+				} catch (Exception $e) {
+					// duplicate email address
+					if ($e->getCode() == 2)
+					{
+						//Messages::error(__('login.email-already-exists'));
+						Session::set_flash('erro','login.email-already-exists.');
+					}
+					
+					// duplicate username
+					elseif ($e->getCode() == 3)
+					{
+						//Messages::error(__('login.username-already-exists'));
+						Session::set_flash('erro','login.username-already-exists');
+					}
+					
+					// this can't happen, but you'll never know...
+					else
+					{
+						Messages::error($e->getMessage());
+					}
+				}
+				
 			
-			Session::set_flash('success','New user has been created.');
-			Response::redirect('user/index');
+			
+			
 		}
 		
 		
