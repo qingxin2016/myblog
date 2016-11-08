@@ -67,4 +67,23 @@ class Controller_User extends Controller_Template {
 		}
 		Response::redirect('user/index');
 	}
+	public function action_reset($username){
+		$username=$username;
+		// delete the user
+		$new_password = Auth::reset_password($username);
+		if ($new_password){
+			Session::set_flash('success','New password is:  <h1>'.$new_password.'</h1>');
+		}else {
+			Session::set_flash('erro','Failed');
+		}
+		Response::redirect('user/index');
+	}
+	
+	public function action_edit($username){
+		
+		
+		$this->template->title = 'Edit User';
+		$this->template->content = View::forge ( 'user/edit' );
+		
+	}
 }

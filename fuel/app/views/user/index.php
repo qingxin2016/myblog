@@ -38,9 +38,9 @@
 		      <td class="text-center"><?php echo Date::forge($items['created_at']);?></td>
 		      <td>
 		      	<div class="btn-group">
-				  <a type="button" class="btn btn-primary">Edit</a>
-				  <a type="button" class="btn btn-warning">Reset</a>
-				  <a type="button" class="btn btn-danger" href="/user/delete/<?php echo $items['username'];?>" onclick="javascript:return confirm('Are you sure to delete this news?')">Delete</a>
+				  <a type="button" class="btn btn-primary" href="/user/edit">Edit</a>
+				  <a type="button" class="btn btn-warning" href="/user/reset/<?php echo $items['username'];?>" onclick="javascript:return confirm('Are you sure to reset this user?')">Reset</a>
+				  <a type="button" class="btn btn-danger" href="/user/delete/<?php echo $items['username'];?>" onclick="javascript:return confirm('Are you sure to delete this user?')">Delete</a>
 				</div>
 		      </td>
 		    </tr>
