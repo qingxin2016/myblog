@@ -3,11 +3,7 @@ use Fuel\Core\Str;
 use Fuel\Core\Session;
 ?>
 <br><br>
-<?php if (\Fuel\Core\Session::get_flash('success')):?>
-	<div class="alert alert-success">
-		<?php echo Session::get_flash('success');?>
-	</div>
-<?php endif;?>
+
 <!-- Example row of columns -->
 <div class="row">
 <?php foreach ($news as $items):?>
