@@ -34,14 +34,14 @@ class Controller_User extends Controller_Template {
 					if ($e->getCode() == 2)
 					{
 						//Messages::error(__('login.email-already-exists'));
-						Session::set_flash('erro','login.email-already-exists.');
+						Session::set_flash('erro','email-already-exists.');
 					}
 					
 					// duplicate username
 					elseif ($e->getCode() == 3)
 					{
 						//Messages::error(__('login.username-already-exists'));
-						Session::set_flash('erro','login.username-already-exists');
+						Session::set_flash('erro','username-already-exists');
 					}
 					
 					// this can't happen, but you'll never know...
@@ -49,16 +49,22 @@ class Controller_User extends Controller_Template {
 					{
 						Messages::error($e->getMessage());
 					}
-				}
-				
-			
-			
-			
+				}		
 		}
-		
-		
-		
 		$this->template->title = 'Create User';
 		$this->template->content = View::forge ( 'user/create' );
+	}
+	
+	
+	public function action_delete($username){
+		$username=$username;
+		// delete the user
+		$delete=Auth::delete_user($username);
+		if ($delete){
+			Session::set_flash('success','User has been deleted');
+		}else {
+			Session::set_flash('erro','username did not exist');
+		}
+		Response::redirect('user/index');
 	}
 }
