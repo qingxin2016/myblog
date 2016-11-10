@@ -79,11 +79,11 @@ class Controller_User extends Controller_Template {
 		Response::redirect('user/index');
 	}
 	
-	public function action_edit($username){
+public function action_edit(){
 		
 		
-		$this->template->title = 'Edit User';
+		$this->template->title = 'Edt User';
 		$this->template->content = View::forge ( 'user/edit' );
-		
 	}
+	
 }

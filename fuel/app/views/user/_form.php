@@ -1,3 +1,6 @@
+<?php
+use Fuel\Core\Input;
+?>
 <div class="form-group">
 	<div class="col-lg-12">
 		<?php echo Form::label('Username','',array('class'=>'control-label'));?>

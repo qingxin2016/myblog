@@ -4,7 +4,7 @@ use Fuel\Core\Form;
 <br><br>
 <div class="row">
 	<div class="col-lg-12">
-		<?php echo Form::open(array('action'=>'/user/create'));?>
+		<?php echo Form::open(array('action'=>'/user/edit'));?>
 			
 			<?php echo render('user/_form');?>
 			  
